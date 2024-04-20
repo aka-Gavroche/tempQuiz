@@ -1,0 +1,25 @@
+.dark-theme {
+    --body-background: #222831;
+    --logo-box-shadow: 0px 0px 0px #000000;
+    --section-background: #31363F;
+    --section-box-shadow: 0px 0px 10px -1px #000;
+    --font-color: #fff;
+    --font-opacity-color: #ffffff85;
+    --btn-background: #282c33;
+    --btn-background-hover: #24282f;
+    --btn-background-active: #1e2127;
+    --quiz-answer-background: #242830;
+}
+
+.white-theme {
+    --body-background: #9ba6d5;
+    --logo-box-shadow: 0px 0px 2px #000000;
+    --section-background: #baceff;
+    --section-box-shadow: 0px 0px 10px -3px #000;
+    --font-color: #333333;
+    --font-opacity-color: #000000a8;
+    --btn-background: #a0bbff;
+    --btn-background-hover: #93b0fc;
+    --btn-background-active: #88aaff;
+    --quiz-answer-background: #a1bafb;
+}

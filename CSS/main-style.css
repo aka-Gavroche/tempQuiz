@@ -1,0 +1,303 @@
+@charset "UTF-8";
+/*Файл обнулення стилів за замовчуванням*/
+/*Видаляємо всі відступи і межі*/
+/*Зірочка означає застосування даних параметрів до всіх-всіх тегів html-сторінки*/
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Condensed&display=swap");
+* {
+  padding: 0; /*внутрішній відступ*/
+  margin: 0; /*Зовнішній відступ*/
+  border: 0; /*межа-контур*/
+}
+
+/*Згідно зі специфікацією CSS ширина блоку складається з ширини контенту (width), значень відступів (margin), полів (padding) і кордонів (border).*/
+/*Аналогічно йде і з висотою блоку.*/
+/*box-sizing дозволяє змінити цей алгоритм, щоб властивості width і height задавали розміри не контента, а розміри блоку.*/
+/*:before і :after - псевдоелементи, які дають можливість відображати бажаний контент до/після вмісту елемента, до якого він додається.*/
+*, *:before, :after {
+  box-sizing: border-box; /*застосовується для зміни алгоритма розрахунку ширини і висоти елемента*/
+  -moz-box-sizing: border-box; /*Те саме для Firefox*/
+  -webkit-box-sizing: border-box; /*Safari до версії 5.0, Chrome до версії 10.0, Android до версії 4.0 і iOS Safari до версії 5.0*/
+}
+
+/*Видаляємо лінії обводки у деяких браузерів*/
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+/*Робимо вказані нижче теги блочними*/
+nav, footer, header, aside {
+  display: block;
+}
+
+/*Урівнюємо поведінку шрифтів та елементів для різних браузерів*/
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+/*псевдоелемент, котрий видаляє хрестик із форми вводу у браузері Internet Explorer*/
+input::-ms-clear {
+  display: none;
+}
+
+Видаляємо стрілки в input типу Number input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number],
+input[type=number]:hover,
+input[type=number]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+button {
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+/*Псевдоелемент, котрий видаляє лишні відступи і пропуски у браузері Firefox*/
+/*В даному випадку застосований до кнопки*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.dark-theme {
+  --body-background: #222831;
+  --logo-box-shadow: 0px 0px 0px #000000;
+  --section-background: #31363F;
+  --section-box-shadow: 0px 0px 10px -1px #000;
+  --font-color: #fff;
+  --font-opacity-color: #ffffff85;
+  --btn-background: #282c33;
+  --btn-background-hover: #24282f;
+  --btn-background-active: #1e2127;
+  --quiz-answer-background: #242830;
+}
+
+.white-theme {
+  --body-background: #9ba6d5;
+  --logo-box-shadow: 0px 0px 2px #000000;
+  --section-background: #baceff;
+  --section-box-shadow: 0px 0px 10px -3px #000;
+  --font-color: #333333;
+  --font-opacity-color: #000000a8;
+  --btn-background: #a0bbff;
+  --btn-background-hover: #93b0fc;
+  --btn-background-active: #88aaff;
+  --quiz-answer-background: #a1bafb;
+}
+
+body {
+  font-family: "Scada", sans-serif;
+  background-color: var(--body-background);
+  color: var(--font-color);
+  min-height: 100%;
+}
+
+.none {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+.theme-switch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  padding: 6px;
+}
+.theme-switch:active .theme-switch__img {
+  scale: 0.9;
+  filter: drop-shadow(0px 0px 0px #000);
+}
+.theme-switch:hover {
+  cursor: pointer;
+}
+.theme-switch__img {
+  width: 100%;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 3px #000);
+  transition: all 0.1s ease-in;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  position: relative;
+}
+.header__img {
+  width: min(15.625vw, 70px);
+  filter: drop-shadow(var(--logo-box-shadow));
+  object-fit: cover;
+}
+.header__title {
+  font-size: min(8.5vw, 3rem);
+  font-weight: 600;
+}
+.header__subtitle {
+  font-weight: 800;
+  color: var(--header-subtitle-color);
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 25px;
+}
+
+.main-wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 50px;
+}
+
+.section {
+  width: min(100%, 500px);
+  padding: 20px min(4vw, 25px);
+  margin: 0 auto;
+  box-shadow: var(--section-box-shadow);
+  border-radius: 8px;
+  background-color: var(--section-background);
+  position: relative;
+}
+.section__title {
+  text-align: center;
+  font-size: min(9vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.section_header {
+  padding: 15px 5px;
+}
+.section_footer {
+  padding: 20px 0;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.quiz__header {
+  text-align: center;
+  line-height: 1.25;
+}
+.quiz__title {
+  line-height: 1.25;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+}
+.quiz__list {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+.quiz__item {
+  margin-bottom: 15px;
+}
+.quiz__item:last-child {
+  margin-bottom: 0;
+}
+.quiz__item label {
+  display: inline-block;
+  width: 100%;
+  transition: all 0.2s;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+.quiz__item label:hover {
+  background-color: var(--quiz-answer-background);
+  cursor: pointer;
+}
+.quiz__item label input:hover {
+  cursor: pointer;
+}
+.quiz__submit {
+  font-size: 1.5rem;
+  border-radius: 8px;
+  padding: 10px 5px;
+  background-color: var(--btn-background);
+  transition: 0.1s all;
+}
+.quiz__submit:hover {
+  background-color: var(--btn-background-hover);
+}
+.quiz__submit:active {
+  background-color: var(--btn-background-active);
+}
+.quiz__result-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.quiz__result-score {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.quiz__result-message {
+  font-size: 1.25rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  font-size: min(4vw, 1rem);
+}/*# sourceMappingURL=main-style.css.map */

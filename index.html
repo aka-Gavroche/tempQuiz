@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG\favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="CSS/main-style.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container main-wrapper">
+        <!-----HEADER----->
+        <header class="header section section_header">
+            <img src="./IMG/logo.png" alt="img" class="header__img">
+            <h1 class="header__title">Quiz</h1>
+
+            <div id="themeSwitcher" class="theme-switch">
+                <img src="IMG/day-night.png" alt="img" class="theme-switch__img">
+            </div>
+        </header>
+
+        <!-----MAIN----->
+        <main class="main">
+            <section class="section">
+                <!-- <h2 class="section__title">Оберіть правильну відповідь</h2> -->
+                <div class="quiz" id="quiz">
+                    
+                    <div class="quiz__header" id="quizHeader">
+                        <h3 class="quiz__title">Питання</h3>
+                    </div>
+
+                    <ul class="quiz__list" id="quizList">
+                        <li class="quiz__item">
+                            <label>
+                                <input type="radio" class="quizz__answer" name="answer">
+                                <span>Відповідь</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button class="quiz__submit" id="submit">Відповісти</button>
+                </div>
+                
+            </section>
+        </main>
+
+        <!-----FOOTER----->
+        <footer class="footer section section_footer">
+            <div class="footer__copyright">
+                @ a.k.a.Gavroche | 2024 | © All Rights Reserved</div>
+        </footer>
+    </div>
+
+    <script src="JS/page-theme.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+</html>
